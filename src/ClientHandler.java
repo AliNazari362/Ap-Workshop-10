@@ -30,7 +30,7 @@ public class ClientHandler implements Runnable {
 
                 if (newAlert instanceof Message msg) server.broadcast(msg, this);
                 else if (newAlert instanceof ExitAlert exAl) {
-                    server.removeClient(new Message(exAl.getUser(), exAl.toString()), this);
+                    server.removeClient(new Message(exAl.getUser(), exAl.toString(), true), this);
                     break;
                 }
             } catch (IOException | ClassNotFoundException e) {
